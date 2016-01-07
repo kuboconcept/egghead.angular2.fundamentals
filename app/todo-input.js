@@ -23,14 +23,14 @@ System.register(['angular2/core', './todo-service'], function(exports_1) {
                 function TodoInput(_todoService) {
                     this._todoService = _todoService;
                 }
-                TodoInput.prototype.onClick = function (value) {
-                    this._todoService.todos.push(value);
+                TodoInput.prototype.onSubmit = function (value) {
+                    this._todoService.todos.push(this.todoModel);
                     console.log(this._todoService.todos);
                 };
                 TodoInput = __decorate([
                     core_1.Component({
                         selector: 'todo-input',
-                        template: "<div>\n\t<input type=\"text\" #myInput>\n\t<button (click)=\"onClick(myInput.value)\">Click me</button>\n\t</div>"
+                        template: "<div>\n\t<form (submit)=\"onSubmit()\">\n\t\t<input type=\"text\" [(ngModel)]=\"todoModel\">\n\t</form>\n\t</div>"
                     }), 
                     __metadata('design:paramtypes', [todo_service_1.TodoService])
                 ], TodoInput);

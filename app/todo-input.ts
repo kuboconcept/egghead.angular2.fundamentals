@@ -4,16 +4,19 @@ import {TodoService} from './todo-service';
 @Component({
 	selector: 'todo-input',
 	template: `<div>
-	<input type="text" #myInput>
-	<button (click)="onClick(myInput.value)">Click me</button>
+	<form (submit)="onSubmit()">
+		<input type="text" [(ngModel)]="todoModel">
+	</form>
 	</div>`
 })
 
 export class TodoInput{
+	todoModel;
+	
 	constructor(public _todoService: TodoService){}
 	
-	onClick(value){
-		this._todoService.todos.push(value);
+	onSubmit(value){
+		this._todoService.todos.push(this.todoModel);
 		console.log(this._todoService.todos);
 	}
 }
