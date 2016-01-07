@@ -9,27 +9,27 @@ System.register(['angular2/core'], function(exports_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var App;
+    var TodoInput;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            App = (function () {
-                function App() {
+            TodoInput = (function () {
+                function TodoInput() {
                 }
-                App = __decorate([
+                TodoInput = __decorate([
                     core_1.Component({
-                        selector: 'app',
-                        template: "<div>Hello world!</div>"
+                        selector: 'todo-input',
+                        template: "<div>I'm a todo input</div>"
                     }), 
                     __metadata('design:paramtypes', [])
-                ], App);
-                return App;
+                ], TodoInput);
+                return TodoInput;
             })();
-            exports_1("App", App);
+            exports_1("TodoInput", TodoInput);
         }
     }
 });
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=todo-input.js.map
