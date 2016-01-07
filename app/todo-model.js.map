@@ -1,0 +1,1 @@
+{"version":3,"file":"todo-model.js","sourceRoot":"","sources":["todo-model.ts"],"names":["TodoModel","TodoModel.constructor"],"mappings":";;;;;YAAA;gBAGCA,mBAAmBA,KAAiBA;oBAAxBC,qBAAwBA,GAAxBA,UAAwBA;oBAAjBA,UAAKA,GAALA,KAAKA,CAAYA;oBAFpCA,WAAMA,GAAUA,SAASA,CAACA;gBAEYA,CAACA;gBACxCD,gBAACA;YAADA,CAACA,AAJD,IAIC;YAJD,iCAIC,CAAA"}

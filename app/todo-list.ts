@@ -5,13 +5,13 @@ import {TodoService} from './todo-service';
 	selector: 'todo-list',
 	template: `<div>
 		<ul>
-			<li *ngFor="#todo of _todoService.todos">
-				{{todo}}
+			<li *ngFor="#todo of todoService.todos">
+				{{todo.title}}
 			</li>
 		</ul>
 	</div>`
 })
 
 export class TodoList{
-	constructor(public _todoService:TodoService){}
+	constructor(public todoService:TodoService){}
 }

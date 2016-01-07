@@ -20,13 +20,13 @@ System.register(['angular2/core', './todo-service'], function(exports_1) {
             }],
         execute: function() {
             TodoList = (function () {
-                function TodoList(_todoService) {
-                    this._todoService = _todoService;
+                function TodoList(todoService) {
+                    this.todoService = todoService;
                 }
                 TodoList = __decorate([
                     core_1.Component({
                         selector: 'todo-list',
-                        template: "<div>\n\t\t<ul>\n\t\t\t<li *ngFor=\"#todo of _todoService.todos\">\n\t\t\t\t{{todo}}\n\t\t\t</li>\n\t\t</ul>\n\t</div>"
+                        template: "<div>\n\t\t<ul>\n\t\t\t<li *ngFor=\"#todo of todoService.todos\">\n\t\t\t\t{{todo.title}}\n\t\t\t</li>\n\t\t</ul>\n\t</div>"
                     }), 
                     __metadata('design:paramtypes', [todo_service_1.TodoService])
                 ], TodoList);
