@@ -19,13 +19,13 @@ System.register(['angular2/core'], function(exports_1) {
             TodoInput = (function () {
                 function TodoInput() {
                 }
-                TodoInput.prototype.onClick = function (value) {
-                    console.log(value);
+                TodoInput.prototype.onClick = function (event, value) {
+                    console.log(event, value);
                 };
                 TodoInput = __decorate([
                     core_1.Component({
                         selector: 'todo-input',
-                        template: "<div>\n\t<input type=\"text\" #myInput>\n\t<button (click)=\"onClick(myInput.value)\">Click me</button>\n\t</div>"
+                        template: "<div>\n\t<input type=\"text\" #myInput>\n\t<button (click)=\"onClick($event, myInput.value)\">Click me</button>\n\t</div>"
                     }), 
                     __metadata('design:paramtypes', [])
                 ], TodoInput);
