@@ -1,4 +1,5 @@
 import {bootstrap} from 'angular2/platform/browser'
 import {App} from './main'
+import {TodoService} from './todo-service'
 
-bootstrap(App)
+bootstrap(App, [TodoService])
