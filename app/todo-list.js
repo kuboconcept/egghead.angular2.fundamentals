@@ -1,4 +1,4 @@
-System.register(['angular2/core', './todo-input', './todo-list'], function(exports_1) {
+System.register(['angular2/core', './todo-service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,35 +8,32 @@ System.register(['angular2/core', './todo-input', './todo-list'], function(expor
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, todo_input_1, todo_list_1;
-    var App;
+    var core_1, todo_service_1;
+    var TodoList;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (todo_input_1_1) {
-                todo_input_1 = todo_input_1_1;
-            },
-            function (todo_list_1_1) {
-                todo_list_1 = todo_list_1_1;
+            function (todo_service_1_1) {
+                todo_service_1 = todo_service_1_1;
             }],
         execute: function() {
-            App = (function () {
-                function App() {
+            TodoList = (function () {
+                function TodoList(_todoService) {
+                    this._todoService = _todoService;
                 }
-                App = __decorate([
+                TodoList = __decorate([
                     core_1.Component({
-                        selector: 'app',
-                        directives: [todo_input_1.TodoInput, todo_list_1.TodoList],
-                        template: "<div>\n\t<todo-input></todo-input>\n\t<todo-list></todo-list>\n\t</div>"
+                        selector: 'todo-list',
+                        template: "<div>\n\t\t<ul>\n\t\t\t<li *ngFor=\"#todo of _todoService.todos\">\n\t\t\t\t{{todo}}\n\t\t\t</li>\n\t\t</ul>\n\t</div>"
                     }), 
-                    __metadata('design:paramtypes', [])
-                ], App);
-                return App;
+                    __metadata('design:paramtypes', [todo_service_1.TodoService])
+                ], TodoList);
+                return TodoList;
             })();
-            exports_1("App", App);
+            exports_1("TodoList", TodoList);
         }
     }
 });
-//# sourceMappingURL=main.js.map
+//# sourceMappingURL=todo-list.js.map
