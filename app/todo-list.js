@@ -26,7 +26,7 @@ System.register(['angular2/core', './todo-service'], function(exports_1) {
                 TodoList = __decorate([
                     core_1.Component({
                         selector: 'todo-list',
-                        template: "<div>\n\t\t<ul>\n\t\t\t<li *ngFor=\"#todo of todoService.todos\">\n\t\t\t\t{{todo.title}}\n\t\t\t</li>\n\t\t</ul>\n\t</div>"
+                        template: "<div>\n\t\t<ul>\n\t\t\t<li *ngFor=\"#todo of todoService.todos\">\n\t\t\t\t<span [contentEditable]=\"todo.status == 'completed'\">{{todo.title}}</span>\n\t\t\t\t<button (click)=\"todo.toggle()\">Toggle</button>\n\t\t\t</li>\n\t\t</ul>\n\t</div>"
                     }), 
                     __metadata('design:paramtypes', [todo_service_1.TodoService])
                 ], TodoList);
