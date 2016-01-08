@@ -1,4 +1,4 @@
-System.register(['angular2/core', './todo-service', './todo-item-renderer'], function(exports_1) {
+System.register(['angular2/core', './todo-service', './todo-item-renderer', './search-pipe'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', './todo-service', './todo-item-renderer'], fun
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, todo_service_1, todo_item_renderer_1;
+    var core_1, todo_service_1, todo_item_renderer_1, search_pipe_1;
     var TodoList;
     return {
         setters:[
@@ -20,6 +20,9 @@ System.register(['angular2/core', './todo-service', './todo-item-renderer'], fun
             },
             function (todo_item_renderer_1_1) {
                 todo_item_renderer_1 = todo_item_renderer_1_1;
+            },
+            function (search_pipe_1_1) {
+                search_pipe_1 = search_pipe_1_1;
             }],
         execute: function() {
             TodoList = (function () {
@@ -30,7 +33,8 @@ System.register(['angular2/core', './todo-service', './todo-item-renderer'], fun
                     core_1.Component({
                         selector: 'todo-list',
                         directives: [todo_item_renderer_1.TodoItemRenderer],
-                        template: "<div>\n\t\t<ul>\n\t\t\t<li *ngFor=\"#todo of todoService.todos\">\n\t\t\t\t<todo-item-renderer [todo]=\"todo\"></todo-item-renderer>\n\t\t\t</li>\n\t\t</ul>\n\t</div>"
+                        pipes: [search_pipe_1.SearchPipe],
+                        template: "<div>\n\t\t<ul>\n\t\t\t<li *ngFor=\"#todo of todoService.todos | search\">\n\t\t\t\t<todo-item-renderer [todo]=\"todo\"></todo-item-renderer>\n\t\t\t</li>\n\t\t</ul>\n\t</div>"
                     }), 
                     __metadata('design:paramtypes', [todo_service_1.TodoService])
                 ], TodoList);
