@@ -9,4 +9,8 @@ export class TodoService{
 		new TodoModel('sleep'),
 		new TodoModel('code')
 	];
+	
+	addTodo(todo:TodoModel) {
+		this.todos = [...this.todos, todo];
+	}
 }
