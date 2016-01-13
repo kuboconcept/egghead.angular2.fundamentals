@@ -29,12 +29,16 @@ System.register(['angular2/core', './todo-service', './todo-item-renderer', './s
                 function TodoList(todoService) {
                     this.todoService = todoService;
                 }
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], TodoList.prototype, "status", void 0);
                 TodoList = __decorate([
                     core_1.Component({
                         selector: 'todo-list',
                         directives: [todo_item_renderer_1.TodoItemRenderer],
                         pipes: [started_pipe_1.StartedPipe],
-                        template: "<div>\n\t\t<ul>\n\t\t\t<li *ngFor=\"#todo of todoService.todos | started\">\n\t\t\t\t<todo-item-renderer \n\t\t\t\t[todo]=\"todo\"\n\t\t\t\t(toggle)=\"todoService.toggleTodo($event)\"\n\t\t\t\t></todo-item-renderer>\n\t\t\t</li>\n\t\t</ul>\n\t</div>"
+                        template: "<div>\n\t\t<ul>\n\t\t\t<li *ngFor=\"#todo of todoService.todos | started : status\">\n\t\t\t\t<todo-item-renderer \n\t\t\t\t[todo]=\"todo\"\n\t\t\t\t(toggle)=\"todoService.toggleTodo($event)\"\n\t\t\t\t></todo-item-renderer>\n\t\t\t</li>\n\t\t</ul>\n\t</div>"
                     }), 
                     __metadata('design:paramtypes', [todo_service_1.TodoService])
                 ], TodoList);
