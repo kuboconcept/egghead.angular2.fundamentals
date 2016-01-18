@@ -1,4 +1,4 @@
-System.register(['angular2/platform/browser', './main', './todo-service'], function(exports_1) {
+System.register(['angular2/platform/browser', './main', './todo/services/todo-service'], function(exports_1) {
     var browser_1, main_1, todo_service_1;
     return {
         setters:[

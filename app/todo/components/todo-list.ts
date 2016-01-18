@@ -1,8 +1,12 @@
 import {Component, Input} from 'angular2/core';
-import {TodoService} from './todo-service';
+
 import {TodoItemRenderer} from './todo-item-renderer';
-import {StartedPipe} from './started-pipe';
-import {SearchPipe} from './search-pipe';
+
+import {TodoService} from '../services/todo-service';
+
+import {StartedPipe} from '../pipes/started-pipe';
+
+import {SearchPipe} from '../../search/pipes/search-pipe';
 
 @Component({
 	selector: 'todo-list',
