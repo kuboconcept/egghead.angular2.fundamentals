@@ -40,10 +40,11 @@ System.register(['angular2/core', './todo-model'], function(exports_1) {
                     this.todos = this.todos.concat([todo]);
                 };
                 TodoService.prototype.toggleTodo = function (todo) {
-                    todo.toggle();
                     var i = this.todos.indexOf(todo);
+                    var status = todo.status == "started" ? "completed" : "started";
+                    var toggledTodo = Object.assign({}, todo, { status: status });
                     this.todos = this.todos.slice(0, i).concat([
-                        todo
+                        toggledTodo
                     ], this.todos.slice(i + 1));
                 };
                 TodoService = __decorate([
