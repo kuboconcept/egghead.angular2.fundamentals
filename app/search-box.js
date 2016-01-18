@@ -9,30 +9,35 @@ System.register(['angular2/core'], function(exports_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var SearchPipe;
+    var SearchBox;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            SearchPipe = (function () {
-                function SearchPipe() {
+            SearchBox = (function () {
+                function SearchBox() {
+                    this.update = new core_1.EventEmitter();
                 }
-                SearchPipe.prototype.transform = function (value, _a) {
-                    var term = _a[0];
-                    return value.filter(function (item) { return item.title.startsWith(term); });
+                SearchBox.prototype.ngOnInit = function () {
+                    this.update.emit('');
                 };
-                SearchPipe = __decorate([
-                    core_1.Pipe({
-                        name: 'search'
+                __decorate([
+                    core_1.Output(), 
+                    __metadata('design:type', Object)
+                ], SearchBox.prototype, "update", void 0);
+                SearchBox = __decorate([
+                    core_1.Component({
+                        selector: 'search-box',
+                        template: "<div>\n\t\t<input #input type=\"text\" (input)=\"update.emit(input.value)\">\n\t</div>"
                     }), 
                     __metadata('design:paramtypes', [])
-                ], SearchPipe);
-                return SearchPipe;
+                ], SearchBox);
+                return SearchBox;
             })();
-            exports_1("SearchPipe", SearchPipe);
+            exports_1("SearchBox", SearchBox);
         }
     }
 });
-//# sourceMappingURL=search-pipe.js.map
+//# sourceMappingURL=search-box.js.map
